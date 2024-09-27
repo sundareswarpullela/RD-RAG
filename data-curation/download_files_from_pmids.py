@@ -28,7 +28,7 @@ def download_file_from_pmc(pmc_id):
 
     
 
-source_file_directory = "./data/source_files"
+source_file_directory = "data/source_files"
 
 csv_files = [f for f in os.listdir(source_file_directory) if f.endswith('.csv')]
 print(csv_files)

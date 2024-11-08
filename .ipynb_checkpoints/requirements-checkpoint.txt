@@ -1,8 +1,0 @@
-pandas
-langchain
-llama-index
-llama-index-vector-stores-chroma
-llama-index-embeddings-huggingface
-llama-index-embeddings-bedrock
-einops
-llama-index-llms-huggingface

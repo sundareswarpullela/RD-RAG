@@ -1,1 +1,5 @@
 *.csv
+/data-curation/chroma_db
+/data
+data-curation/data/files
+data-curation/data/source_files/chroma_db/

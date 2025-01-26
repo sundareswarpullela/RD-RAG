@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 
 
-class BGEEmedder:
+class BGEEmbedder:
     def __init__(self, model_path = "BAAI/bge-large-en-v1.5"):
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModel.from_pretrained(model_path)

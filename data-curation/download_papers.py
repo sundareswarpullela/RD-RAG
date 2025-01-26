@@ -5,11 +5,19 @@ import time
 import xml.etree.ElementTree as ET
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
+import logging
+
+log = logging.getLogger()
+logging.basicConfig(
+    filename="data-curation/data/download_papers.log",
+    format="%(asctime)s - %(message)s",
+    level=logging.INFO,
+    )
+log.propagate = False
 
 
 source_file_directory = "data-curation/data/source_files"
 pdf_files_location = "data-curation/data/files/"
-download_manifest_location = "data-curation/data/local_files.json"
 
 UNPAYWALL_API = "https://api.unpaywall.org/v2/"
 
@@ -25,10 +33,9 @@ def get_pdf_from_unpaywall(doi):
         if "best_oa_location" in data and data["best_oa_location"]:
             return data["best_oa_location"]["url_for_pdf"]
 
-    
         return None
     except Exception as e:
-        print(f"Failed to fetch from Unpaywall: {e}")
+        log.warning(f"Failed to fetch from Unpaywall: {e}")
         return None
     
 
@@ -45,21 +52,21 @@ def get_pdf_from_pmc(pmc_id):
 
 
 
-def download_pdf(pdf_url, save_path):
+def download_pdf(pdf_url, filename, save_path):
     """Downloads and saves the PDF file."""
     if os.path.exists(save_path):
-        print(f"File already exists: {save_path}")
-        return
+        log.info(f"File already exists: {save_path}")
+        return None
     try:
         response = requests.get(pdf_url, stream=True)
         if response.status_code == 200:
             with open(save_path, "wb") as pdf_file:
                 for chunk in response.iter_content(1024):
                     pdf_file.write(chunk)
-            print(f"Downloaded successfully: {save_path}")
+            log.info(f"Downloaded successfully: {filename}")
         else:
 
-            print(f"Failed to download PDF, HTTP {response.status_code}")
+            print(f"Failed to download {filename}, HTTP {response.status_code}")
     except Exception as e:
         print(f"Error downloading PDF: {e}")
 
@@ -68,20 +75,20 @@ def fetch_research_paper(identifiers, save_folder="data-curation/data/files"):
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
 
-    filename = f"{save_folder}/{identifiers[0].replace('/', '_')}.pdf"
+    filename = f"{identifiers[0].replace('/', '_')}.pdf"
+    save_path = f"{save_folder}/{filename}"
 
     pdf_url = get_pdf_from_unpaywall(identifiers[0])
     if not pd.isna(identifiers[1]) and not pdf_url:
-        print("helloooo")
         # Fallback to pubmed_central
         pdf_url = get_pdf_from_pmc(identifiers[1])
-    print(f"PDF URL: {pdf_url}")
+    log.debug(f"DOI: {identifiers[0]}, PDF URL: {pdf_url}")
 
     if pdf_url:
-        print(f"Downloading PDF from: {pdf_url}")
-        download_pdf(pdf_url, filename)
+        log.info(f"Downloading PDF from: {pdf_url}")
+        download_pdf(pdf_url, filename, save_path)
     else:
-        print(f"Could not find an open-access version for DOI: {identifiers[0]}")
+        log.warning(f"Could not find an open-access version for DOI: {identifiers[0]}")
 
 
 
@@ -91,7 +98,7 @@ def download_multiple_files(identifiers):
 
 
 csv_files = [f for f in os.listdir(source_file_directory) if f.endswith('.csv')]
-print(csv_files)
+
 
 for csv_file in csv_files:
     df = pd.read_csv(f"{source_file_directory}/{csv_file}")

@@ -13,7 +13,7 @@ class GTEEmbedder:
     def __embed_text__(self, text):
         encoded_input = self.tokenizer([text], max_length=8192, padding=True, truncation=True, return_tensors='pt')
         model_output = self.model(**encoded_input)
-        embeddings = model_output[:, 0]
+        embeddings = model_output.last_hidden_state[:, 0]
         # normalize embeddings
         embeddings = F.normalize(embeddings, p=2, dim=1)
         return embeddings

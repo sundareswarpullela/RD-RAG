@@ -15,7 +15,7 @@ embedder_map = {
     "bge": BGEEmbedder
 }
 class Embedder:
-    def __init__(self, model, device):
+    def __init__(self, model, device="cpu"):
         self.device = device
         self.embedder = embedder_map[model]()
 
@@ -26,7 +26,7 @@ class Embedder:
         return self.embedder.embed_passage(text)
     
 if __name__ == "__main__":
-    embedder = Embedder("titan", "cuda")
+    embedder = Embedder("gte")
     query = "What is the capital of France?"
     passage = "The capital of France is Paris."
     query_embedding = embedder.embed_query(query)

@@ -72,5 +72,5 @@ def fetch_research_paper(doi, save_folder="data-curation/data/files"):
         print(f"Could not find an open-access version for DOI: {doi}")
 
 # Example usage
-# doi = "10.4187/respcare.06697"  # Replace with your DOI
-# fetch_research_paper(doi, save_folder="data-curation/data/files")
+doi = "10.1146/annurev-med-042921-021447"  # Replace with your DOI
+fetch_research_paper(doi, save_folder="data-curation/data/files")

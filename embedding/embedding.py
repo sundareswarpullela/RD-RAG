@@ -2,8 +2,8 @@ from nv_embed import NVEmbedder
 from cohere_embed import CohereEmbed
 from titan_embed import TitanEmbed
 from openai_embed import OpenAIEmbedder
-from gte_embed import GTEEmbedder
-from bge-en-embed import BGEEmbedder
+from gte_large_embed import GTEEmbedder
+from bge_en_embed import BGEEmbedder
 
 
 embedder_map = {
@@ -12,7 +12,7 @@ embedder_map = {
     "openai": OpenAIEmbedder,
     "nv": NVEmbedder,
     "gte": GTEEmbedder,
-    "bge": BGEEmbedder  
+    "bge": BGEEmbedder
 }
 class Embedder:
     def __init__(self, model, device):
@@ -20,10 +20,10 @@ class Embedder:
         self.embedder = embedder_map[model]
 
     def embed_query(self, text):
-        return self.embedder.embed_query(text, self.device)
+        return self.embedder.embed_query(text)
     
     def embed_passage(self, text):
-        return self.embedder.embed_passage(text, self.device)
+        return self.embedder.embed_passage(text)
     
 if __name__ == "__main__":
     embedder = Embedder("cohere", "cuda")

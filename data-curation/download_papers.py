@@ -8,12 +8,14 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 
 log = logging.getLogger()
+
 logging.basicConfig(
     filename="data-curation/data/download_papers.log",
     format="%(asctime)s - %(message)s",
     level=logging.INFO,
     )
 log.propagate = False
+log.setLevel(logging.INFO)
 
 
 source_file_directory = "data-curation/data/source_files"

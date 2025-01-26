@@ -4,8 +4,8 @@ import torch
 
 class BGEEmbedder:
     def __init__(self, model_path = "BAAI/bge-large-en-v1.5"):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        self.model = AutoModel.from_pretrained(model_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+        self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
         self.model.eval()
 
     

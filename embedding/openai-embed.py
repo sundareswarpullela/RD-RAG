@@ -1,10 +1,19 @@
 from openai import OpenAI
-from openai import OpenAI
-client = OpenAI()
+class OpenAIEmbedder:
+    def __init__(self, model_path = "text-embedding-3-large"):
+        self.client = OpenAI()
+        self.model = model_path
 
-response = client.embeddings.create(
-    input="Your text string goes here",
-    model="text-embedding-3-small"
-)
+    def __embed_text__(self, text):
+        response = self.client.embeddings.create(
+            input=text,
+            model=self.model
+        )
 
-print(response.data[0].embedding)
+        return response.data[0].embedding
+    
+    def embed_query(self, query):
+        return self.__embed_text__(query)   
+    
+    def embed_passage(self, passage):   
+        return self.__embed_text__(passage)

@@ -13,7 +13,7 @@ class TitanEmbedder:
         body = json.dumps({"inputText": text ,"dimensions": 512, "normalize": True})
         response = self.client.invoke_model(body=body, modelId=self.modelId, accept=self.accept, contentType=self.contentType)
         
-        return response['Body'].read().decode('utf-8')
+        return json.loads(response['body'].read().decode('utf-8'))["embedding"]
     
     def embed_query(self, query):
         instruction = ""

@@ -43,8 +43,13 @@ def get_pdf_from_pmc(pmc_id):
         return pdf_url
     return None
 
+
+
 def download_pdf(pdf_url, save_path):
     """Downloads and saves the PDF file."""
+    if os.path.exists(save_path):
+        print(f"File already exists: {save_path}")
+        return
     try:
         response = requests.get(pdf_url, stream=True)
         if response.status_code == 200:

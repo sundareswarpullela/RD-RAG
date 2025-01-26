@@ -25,3 +25,11 @@ class Embedder:
     def embed_passage(self, text):
         return self.embedder.embed_passage(text, self.device)
     
+if __name__ == "__main__":
+    embedder = Embedder("cohere", "cuda")
+    query = "What is the capital of France?"
+    passage = "The capital of France is Paris."
+    query_embedding = embedder.embed_query(query)
+    passage_embedding = embedder.embed_passage(passage)
+    print(query_embedding)
+    print(passage_embedding)

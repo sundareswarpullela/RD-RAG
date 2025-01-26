@@ -14,8 +14,10 @@ class NVEmbedder:
         query_prefix = "Instruct: "+task_name_to_instruct["example"]+"\nQuery: "
         query_embeddings = self.model.encode([query], instruction=query_prefix, max_length=self.max_length)
         query_embeddings = F.normalize(query_embeddings, p=2, dim=1)
+        return query_embeddings
 
     
     def embed_passage(self, passage):
         passage_embeddings = self.model.encode(passage, instruction="", max_length=self.max_length)
         passage_embeddings = F.normalize(passage_embeddings, p=2, dim=1)
+        return passage_embeddings

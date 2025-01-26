@@ -56,9 +56,7 @@ def get_pdf_from_pmc(pmc_id):
 
 def download_pdf(pdf_url, filename, save_path):
     """Downloads and saves the PDF file."""
-    if os.path.exists(save_path):
-        log.info(f"File already exists: {save_path}")
-        return None
+    
     try:
         response = requests.get(pdf_url, stream=True)
         if response.status_code == 200:
@@ -79,7 +77,9 @@ def fetch_research_paper(identifiers, save_folder="data-curation/data/files"):
 
     filename = f"{identifiers[0].replace('/', '_')}.pdf"
     save_path = f"{save_folder}/{filename}"
-
+    if os.path.exists(save_path):
+        log.info(f"File already exists: {filename}")
+        return
     pdf_url = get_pdf_from_unpaywall(identifiers[0])
     if not pd.isna(identifiers[1]) and not pdf_url:
         # Fallback to pubmed_central

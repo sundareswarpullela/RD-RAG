@@ -4,3 +4,4 @@
 data-curation/data/files
 data-curation/data/source_files/chroma_db/
 *.ipynb_checkpoints
+/embedding/__pycache__

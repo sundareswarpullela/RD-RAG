@@ -4,7 +4,7 @@ import json
 
 
 # "{\"texts\":[\"Hello world\",\"This is a test\"],\"input_type\":\"search_document\"}"
-class CohereEmbed:
+class CohereEmbedder:
     def __init__(self):
         self.client = boto3.client('bedrock-runtime')
         self.modelId = 'meta.llama3-1-70b-instruct-v1:0'

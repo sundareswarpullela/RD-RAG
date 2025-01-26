@@ -2,7 +2,7 @@ import boto3
 import json 
 
 
-class TitanEmbed:
+class TitanEmbedder:
     def __init__(self):
         self.client = boto3.client('bedrock-runtime')
         self.modelId = 'amazon.titan-embed-text-v2:0'

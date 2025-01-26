@@ -1,14 +1,14 @@
 from nv_embed import NVEmbedder
-from cohere_embed import CohereEmbed
-from titan_embed import TitanEmbed
+from cohere_embed import CohereEmbedder
+from titan_embed import TitanEmbedder
 from openai_embed import OpenAIEmbedder
 from gte_large_embed import GTEEmbedder
 from bge_en_embed import BGEEmbedder
 
 
 embedder_map = {
-    "cohere": CohereEmbed,
-    "titan": TitanEmbed,
+    "cohere": CohereEmbedder,
+    "titan": TitanEmbedder,
     "openai": OpenAIEmbedder,
     "nv": NVEmbedder,
     "gte": GTEEmbedder,

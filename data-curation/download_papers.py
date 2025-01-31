@@ -56,17 +56,28 @@ def get_pdf_from_pmc(pmc_id):
 
 def download_pdf(pdf_url, filename, save_path):
     """Downloads and saves the PDF file."""
-    
-    try:
-        response = requests.get(pdf_url, stream=True)
-        if response.status_code == 200:
-            with open(save_path, "wb") as pdf_file:
-                for chunk in response.iter_content(1024):
-                    pdf_file.write(chunk)
-            log.info(f"Downloaded successfully: {filename}")
-        else:
 
-            log.warning(f"Failed to download {filename}, HTTP {response.status_code}")
+    urllib.request.urlretrieve(pdf_url, save_path + filename)
+    try:
+        if "ftp" in pdf_url:
+            try:
+                urllib.request.urlretrieve(pdf_url, save_path)
+                print(f"Downloaded {filename}")
+                log.info(f"Downloaded successfully: {filename}")
+            
+            except e:
+                log.warning(f"Error downloading PDF: {e}")
+            
+        else:
+            response = requests.get(pdf_url, stream=True)
+            if response.status_code == 200:
+                with open(save_path, "wb") as pdf_file:
+                    for chunk in response.iter_content(1024):
+                        pdf_file.write(chunk)
+                log.info(f"Downloaded successfully: {filename}")
+            else:
+
+                log.warning(f"Failed to download {filename}, HTTP {response.status_code}")
     except Exception as e:
         log.warning(f"Error downloading PDF: {e}")
 

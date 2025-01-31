@@ -66,9 +66,10 @@ def download_pdf(pdf_url, filename, save_path):
             log.info(f"Downloaded successfully: {filename}")
         else:
 
-            print(f"Failed to download {filename}, HTTP {response.status_code}")
+            log.warning(f"Failed to download {filename}, HTTP {response.status_code}")
     except Exception as e:
-        print(f"Error downloading PDF: {e}")
+        log.warning(f"Error downloading PDF: {e}")
+
 
 def fetch_research_paper(identifiers, save_folder="data-curation/data/files"):
     """Fetches and downloads the research paper given a DOI."""
@@ -109,5 +110,3 @@ for csv_file in csv_files:
     identifiers = list(zip(dois, pmcids))
     download_multiple_files(identifiers)
 
-
-        

@@ -68,7 +68,7 @@ class Embedder(EmbeddingFunction):
         with open(data_path, "r") as f:
             data = json.load(f)
 
-        chroma_client = PersistentClient()
+        chroma_client = PersistentClient(path ="vectordb")
 
         collection = chroma_client.create_collection(
             name=f"bioasq_{self.embedder}",

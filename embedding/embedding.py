@@ -1,18 +1,18 @@
-from cohere_embed import CohereEmbedder
-from nv_embed import NVEmbedder
-from titan_embed import TitanEmbedder
-from openai_embed import OpenAIEmbedder
-from gte_large_embed import GTEEmbedder
-from bge_en_embed import BGEEmbedder
+from embedding.cohere_embed import CohereEmbedder
+from embedding.nv_embed import NVEmbedder
+from embedding.titan_embed import TitanEmbedder
+from embedding.openai_embed import OpenAIEmbedder
+from embedding.gte_large_embed import GTEEmbedder
+from embedding.bge_en_embed import BGEEmbedder
 from langchain_text_splitters import CharacterTextSplitter
 
-
+import json
 import argparse
 import logging
 from PyPDF2 import PdfReader
-from chromadb import Documents, EmbeddingFunction, Embeddings
+from chromadb import Documents, EmbeddingFunction, Embeddings, PersistentClient
 
-
+CHUNK_SIZE = 250
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -31,9 +31,6 @@ embedder_map = {
 }
 
 
-
-
-    
 class Embedder(EmbeddingFunction):
     embedder_map = embedder_map
     def __init__(self, model, is_chroma = False, device="cpu"):
@@ -58,30 +55,53 @@ class Embedder(EmbeddingFunction):
     
 
 
-
     def chunk_text(self, text):
         text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
-    encoding_name="cl100k_base", chunk_size=100, chunk_overlap=0)
+    encoding_name="cl100k_base", chunk_size=CHUNK_SIZE, chunk_overlap=0)
         chunks = []
         for chunk in text_splitter.split(text):
             chunks.append(chunk)
         
         return chunks
 
+    def embed_bioasq(self, data_path):
+        with open(data_path, "r") as f:
+            data = json.load(f)
 
-            
+        chroma_client = PersistentClient()
 
+        collection = chroma_client.create_collection(
+            name=f"bioasq_{self.embedder}",
+            embeddiong_function=self,
+            metadata={
+                "hnsw:space": "cosine",
+                "description": f"BioASQ data embedded using {self.embedder}",
+                }
+            )
+        
+        print("Created ChromaDB collection:", collection.name)
+        
+        id = 0
+        for doc in data:
+            for article in doc["articles"]:
+                if len(article) >= CHUNK_SIZE:
+                    chunked_article = self.chunk_text(article)
 
-    
+                    collection.add(
+                        documents=chunked_article,
+                        ids=[f"{id + i}" for i in range(len(chunked_article))],
+                        metadata={"sources": doc["sources"]}
+                    )
+                    
+                    id += len(chunked_article)
 
-if __name__ == "__main__":
-    # Testing code
-    embedder = Embedder("cohere")
-    pages = embedder.embed_pdf("/Users/sundar/Projects/RD-RAG/data-curation/data/files/10.1055_s-0042-1759881.pdf10.1055_s-0042-1759881.pdf")
-    for p in pages:
-        print(p)
-        print(embedder.embed_passage(p[:2048]))
-        print("\n\n\n")
-        break
-
-
+                else:
+                    collection.add(
+                        documents=[article],
+                            ids=[f"{id}"],
+                            metadata={"sources": doc["sources"]}    
+                        )
+                    id += 1
+                print(f"Embedded {id} documents using {self.embedder} and saved to ChromaDB collection {collection.name}")
+        
+        print(f"Embedded {id} documents using {self.embedder} and saved to ChromaDB collection {collection.name}")

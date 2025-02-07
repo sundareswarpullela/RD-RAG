@@ -21,7 +21,7 @@ if __name__ == "__main__":
     db_parser.add_argument("model", type=str, help="Vector DB to host for embedder model")
     db_parser.add_argument("port", type=int, help="Port to host vector DB")
 
-
+    data_path =  "data-curation/data/source_files/filtered_data.json"
 
     args = parser.parse_args()
     print(args.model)
@@ -32,6 +32,8 @@ if __name__ == "__main__":
         else:
             log.info(f"Embedding model: {args.model}")
             embedder = Embedder(args.model)
+            embedder.embed_bioasq(data_path)
+
 
     elif args.command == "rundb":
         log.info(f"Vector DB model: {args.model}")

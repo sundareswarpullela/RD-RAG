@@ -72,7 +72,7 @@ class Embedder(EmbeddingFunction):
 
         collection = chroma_client.create_collection(
             name=f"bioasq_{self.embedder}",
-            embeddiong_function=self,
+            embedding_function=self,
             metadata={
                 "hnsw:space": "cosine",
                 "description": f"BioASQ data embedded using {self.embedder}",

@@ -35,6 +35,7 @@ class Embedder(EmbeddingFunction):
     embedder_map = embedder_map
     def __init__(self, model, is_chroma = False, device="cpu"):
         self.device = device
+        self.embedder_name = model
         self.embedder = embedder_map[model]()
         self.is_chroma = is_chroma
         
@@ -71,7 +72,7 @@ class Embedder(EmbeddingFunction):
         chroma_client = PersistentClient(path ="vectordb")
 
         collection = chroma_client.create_collection(
-            name=f"bioasq_{self.embedder}",
+            name=f"bioasq_{self.embedder_name}",
             embedding_function=self,
             metadata={
                 "hnsw:space": "cosine",

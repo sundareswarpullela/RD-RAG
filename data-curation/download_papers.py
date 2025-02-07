@@ -62,7 +62,6 @@ def download_pdf(pdf_url, filename, save_path):
         if "ftp" in pdf_url:
             try:
                 urllib.request.urlretrieve(pdf_url, save_path)
-                print(f"Downloaded {filename}")
                 log.info(f"Downloaded successfully: {filename}")
             
             except e:
@@ -120,4 +119,5 @@ for csv_file in csv_files:
     pmcids = df["PMCID"].tolist()
     identifiers = list(zip(dois, pmcids))
     download_multiple_files(identifiers)
+
 

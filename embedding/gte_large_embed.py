@@ -8,7 +8,7 @@ class GTEEmbedder:
     def __init__(self, model_path ="Alibaba-NLP/gte-large-en-v1.5"):
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
         self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
-
+        self.max_length = 8192
 
     def __embed_text__(self, text):
         encoded_input = self.tokenizer([text], max_length=8192, padding=True, truncation=True, return_tensors='pt')

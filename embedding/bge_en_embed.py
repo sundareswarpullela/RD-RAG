@@ -7,6 +7,7 @@ class BGEEmbedder:
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
         self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
         self.model.eval()
+        self.max_length = 512
 
     
     def __embed_text__(self, text):

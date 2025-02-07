@@ -10,12 +10,12 @@ class CohereEmbedder:
         self.modelId = 'cohere.embed-english-v3'
         self.contentType = 'application/json'
         self.accept = 'application/json'
+        self.max_length = 512
     def embed(self, text):
 
         body = json.dumps({"texts":[text],"input_type":"search_document"})
         response = self.client.invoke_model(body=body, modelId=self.modelId, accept=self.accept, contentType=self.contentType)
-        
-        return json.loads(response['body'].read().decode('utf-8'))["embedding"]
+        return json.loads(response['body'])["embedding"]
     
     def embed_query(self, query):
         instruction = ""

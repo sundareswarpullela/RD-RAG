@@ -3,6 +3,7 @@ class OpenAIEmbedder:
     def __init__(self, model_path = "text-embedding-3-large"):
         self.client = OpenAI()
         self.model = model_path
+        self.max_length = 8191
 
     def __embed_text__(self, text):
         response = self.client.embeddings.create(

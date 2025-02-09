@@ -75,11 +75,11 @@ class Embedder(EmbeddingFunction):
         for doc in data:
                 for article in doc["articles"]:
                     if article:
-                        if len(article) >= CHARACTERS_SIZE:
-                            chunked_article = self.chunk_text(article)
+                        if len(article["article"]) >= CHARACTERS_SIZE:
+                            chunked_article = self.chunk_text(article["article"])
                             split_articles.extend(chunked_article)
                         else:
-                            split_articles.append(split_articles)
+                            split_articles.append(article["article"])
         return split_articles
             
 

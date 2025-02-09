@@ -1,7 +1,7 @@
 
 import argparse
 import logging
-from embedding.embedding import Embedder
+from embedding.embedding import Embedder, embed_bioasq
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         else:
             log.info(f"Embedding model: {args.model}")
             embedder = Embedder(args.model)
-            embedder.embed_bioasq(data_path)
+            embed_bioasq(data_path)
 
 
     elif args.command == "rundb":

@@ -21,7 +21,7 @@ if __name__ == "__main__":
     db_parser.add_argument("model", type=str, help="Vector DB to host for embedder model")
     db_parser.add_argument("port", type=int, help="Port to host vector DB")
 
-    data_path =  "data-curation/data/source_files/filtered_data.json"
+    data_path =  "data-curation/data/source_files/filtered_rare_disease_data.json"
 
     args = parser.parse_args()
     print(args.model)

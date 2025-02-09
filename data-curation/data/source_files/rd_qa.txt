@@ -1,0 +1,477 @@
+0. Disease: Neurofibromatosis Type 1
+ Question: Which is the genetic defect causing Neurofibromatosis type 1?
+Ideal Answer: Neurofibromatosis type 1 (NF1) is due to all types of mutations in the neurofibromin (NF1) gene.
+
+1. Disease: Amyotrophic Lateral Sclerosis
+ Question: Are stress granules involved in the pathogenesis of Amyotrophic Lateral Sclerosis?
+Ideal Answer: Stress granules are cytoplasmic inclusions that repress translation of a subset of RNAs in times of cellular stress, and several proteins implicated in neurodegeneration (i.e. Ataxin-2 and SMN) interact with stress granules. Mutant FUS proteins that cause amyotrophic lateral sclerosis incorporate into stress granules. ALS-linked mutations in profilin 1 alter stress granule dynamics, providing further evidence for the potential role of stress granules in ALS pathogenesis. ALS mutations in FUS NLS can impair FUS nuclear localization, induce cytoplasmic inclusions and stress granules, and potentially perturb RNA metabolism.
+
+2. Disease: Spinal Muscular Atrophy
+ Question: Which is the genetic basis of Spinal Muscular Atrophy (SMA)?
+Ideal Answer: The molecular genetic basis of spinal muscular atrophy (SMA), an autosomal recessive neuromuscular disorder, is the loss of function of the survival motor neuron gene (SMN1). Mutations of the SMN1 gene are responsible for SMA. A single nucleotide in the SMN gene regulates splicing and is responsible for spinal muscular atrophy. A critical question is why only the homozygous loss of SMN1, and not SMN2, results in spinal muscular atrophy (SMA). H4F5 is also highly deleted in type I SMA chromosomes, and thus is a candidate phenotypic modifier for SMA.
+The molecular genetic basis of spinal muscular atrophy (SMA), an autosomal recessive neuromuscular disorder, is the loss of function of the survival motor neuron gene (SMN1).
+
+3. Disease: Amyotrophic Lateral Sclerosis
+ Question: What is known about clinical efficacy of ceftriaxone for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: There have been a few case reports to suggest that ceftriaxone can be effective for treatment of amyotrophic lateral sclerosis. However, other case reports did not report clinical benefit of ceftriaxone therapy for ALS. Ceftriaxone has been reported to reduce neuronal damage in amyotrophic lateral sclerosis a through increased expression and activity of the glutamate transporter, GLT1. Clinical trials investigating potential clinical benefits of ceftriaxone in ALS are ongoing.
+
+4. Disease: Tuberous Sclerosis
+ Question: What is the genetic basis of tuberous sclerosis?
+Ideal Answer: The genetic basis of tuberous sclerosis has been attributed to mutations in one of two unlinked genes, TSC1 and TSC2. The functions of the TSC1 and TSC2 gene products, hamartin and tuberin, respectively, have remained ill defined until recently. Genetic, biochemical, and biologic analyses have highlighted their role as negative regulators of the mTOR signaling pathway. Tuberin, serving as a substrate of AKT and AMPK, mediates mTOR activity by coordinating inputs from growth factors and energy availability in the control of cell growth, proliferation, and survival. Emerging evidence also suggests that the TSC 1/2 complex may play a role in modulating the activity of beta-catenin and TGFbeta. These findings provide novel functional links between the TSC genes and other tumor suppressors.
+
+5. Disease: Tuberous Sclerosis
+ Question: Which signalling pathway is involved in Tuberous Sclerosis?
+Ideal Answer: Tuberous Sclerosis is a multisystem genetic disorder caused by mutation in TSC1 or TSC2 gene, that leads to hyperactivation of the mTOR signalling pathway, and subsequent dysregulation of cell growth control.
+
+6. Disease: Marfan Syndrome
+ Question: Which are the cardiac manifestations of Marfan syndrome?
+Ideal Answer: Cardiac manifestations of Marfan syndrome include aortic root dilation,aortic regurgitation, mitral valve prolapse and mitral valve regurgitation.
+
+7. Disease: Ehlers-Danlos Syndrome
+ Question: What are the major clinical Villefranche criteria for classic Ehlers-Danlos syndrome?
+Ideal Answer: The major clinical Villefranche criteria for classic Ehlers-Danlos syndrome are skin hyperextensibility, dystrophic scarring, and joint hypermobility.
+
+8. Disease: Rett Syndrome
+ Question: Which methyl-CpG-binding protein when mutant becomes the hallmark for Rett syndrome?
+Ideal Answer: Rett syndrome (RTT) was shown to be caused by mutations in the methyl-CpG-binding protein 2 (MECP2) gene, with molecular studies identifying MECP2 mutations in up to 80% of classic RTT patients. MECP2 protein was found to assist in the transcriptional silencing process via DNA methylation. We therefore hypothesize that disruption of this gene alters the normal developmental expression of various other genes, some of which must account for the peculiar neurologic phenotype of RTT.
+
+9. Disease: Gaucher Disease
+ Question: What is the gene mutated in the Gaucher disease?
+Ideal Answer: The glucocerebrosidase gene (GBA)
+
+10. Disease: Amyotrophic Lateral Sclerosis
+ Question: What is the main characteristic of Amyotrophic Lateral Sclerosis?
+Ideal Answer: Amyotrophic lateral sclerosis (ALS) is a progressive degeneration of upper and lower motor neurons. 
+
+11. Disease: Thalassemia
+ Question: Which are the newly identified DNA nucleases that can be used to treat thalassemia?
+Ideal Answer: Thalassemia is genetic diseases of the blood caused by mutations in the globin gene.  Main goal for thalassemia treatment is to develop homologous recombination based gene therapy in order to cure these diseases. Zinc finger nucleases (ZFNs) and TAL effector nucleases (TALENs) are proper targets for the human globin gene. Genome editing using engineered nucleases such as ZFNs and TALENs has become a powerful technology for reverse genetics.
+
+12. Disease: Marfan Syndrome
+ Question: What is the main symptom of Marfan syndrome patients?
+Ideal Answer: The diagnosis and surgical treatment of patients with Marfan syndrome remain controversial. Pathohistological alterations of the aorta in patients with Marfan syndrome consisted in pronounced restructuring of the wall with deep irreversible alternative changes. The risk of aortic dissection, which is the most serious manifestation of the Marfan syndrome, increases as the aorta enlarges. Surgical replacement of the aortic root with a composite graft does not end the disease process.
+
+13. Disease: Pompe Disease
+ Question: Is acid alpha-glucosidase the enzyme that causes Pompe disease when mutant?
+Ideal Answer: Pompe disease is an autosomal recessive genetic disorder characterized by a deficiency of the enzyme responsible for degradation of lysosomal glycogen (acid α-glucosidase (GAA))
+
+14. Disease: Ehlers-Danlos Syndrome
+ Question: Is insulin-like growth factor-I (IGF-I) able to affect tendon protein synthesis in classic Ehlers-Danlos syndrome patients?
+Ideal Answer: Tendon protein synthesis rate in classic Ehlers-Danlos patients can be stimulated with insulin-like growth factor-I  
+
+15. Disease: Cystic Fibrosis
+ Question: Which is the prevalence of cystic fibrosis in the human population?
+Ideal Answer: Prevalence of Cystic Fibrosis varies according to the population. A theoretical estimate of the prevalence of cystic fibrosis based on anthropological data suggested a frequency of 25 affected individuals/100,000 inhabitants. However, real data indicated that the true prevalence in the population was considerably lower (6.9 cases/100,000 inhabitants). Results of literature reviews, surveys, and registry analyses revealed a mean prevalence of 0.737/10,000 in the 27 EU countries, which is similar to the value of 0.797 in the United States, and only one outlier, namely the Republic of Ireland at 2.98.
+
+16. Disease: Tuberous Sclerosis
+ Question: Which are the clinical characteristics of Tuberous Sclerosis?
+Ideal Answer: The clinical characteristics of Tuberous Sclerosis include epilepsy, subependymal giant cell astrocytomas, lymphangioleiomyomatosis, rhabdomyoma, renal angiomyolipomas, cortical tubers, neurofibromas, angiofibromas, mental retardation, and behavioral disorders.
+
+17. Disease: Marfan Syndrome
+ Question: Are patients with marfan syndrome at increased risk of arrhythmias?
+Ideal Answer: Patients with marfan syndrome carry increased risk for arrhythmias
+
+18. Disease: Duchenne Muscular Dystrophy
+ Question: Which is the underlying mechanism for exon skipping used to treat Duchenne muscular dystrophy?
+Ideal Answer: Antisense-mediated exon skipping therapy is a promising therapeutic approach that uses short DNA-like molecules called antisense oligonucleotides (AOs) to skip over/splice out the mutated part of the gene to produce a shortened but functional dystrophin protein. Many Duchenne Muscular Dystrophy patients need exon skipping of multiple exons in order to restore the reading frame, depending on how many base pairs the mutated exon(s) and adjacent exons have.
+
+19. Disease: Tuberous Sclerosis
+ Question: Is there evidence for somatic mosaicism in Tuberous Sclerosis?
+Ideal Answer: Yes, somatic mosaicism in Tuberous Sclerosis has been documented with the use of mutation identification, and subsequent linkage analysis in the affected families. In a large family with both parents unaffected, 3 affected children and 5 unaffected siblings, a 4 bp insertion in TSC2 gene was shown to be inherited from the mother.
+
+20. Disease: Cystic Fibrosis
+ Question: What is the incidence of cystic fibrosis in the caucasian population?
+Ideal Answer: Estimates of the newborn frequency of cystic fibrosis in different Caucasian groups range from 4 times more to 40 times less common than the generally accepted figure of 1:2000.
+
+21. Disease: Prader-Willi Syndrome
+ Question: Is the Snord116 cluster associated with the Prader-Willi syndrome?
+Ideal Answer: Yes, SNORD116 has a major role in Prader-Willi syndrome etiology.
+
+22. Disease: Amyotrophic Lateral Sclerosis
+ Question: Which components of the stress granules are known to be related to motor neuron degeneration in Amyotrophic Lateral Sclerosis?
+Ideal Answer: Of note, both ALS and FTD are characterized by pathological inclusions, where some well-known SG markers localize with the ALS related proteins TDP-43 and FUS.
+
+23. Disease: Hemophilia
+ Question: Is factor XI deficient in Hemophilia C?
+Ideal Answer: Factor XI deficiency is associated with a bleeding tendency called Hemophilia C.
+
+24. Disease: Duchenne Muscular Dystrophy
+ Question: What is the effect of amitriptyline in the mdx mouse model of Duchenne muscular dystrophy?
+Ideal Answer: Amitriptyline is efficacious in ameliorating muscle inflammation and depressive symptoms in the mdx mouse model of Duchenne muscular dystrophy
+
+25. Disease: Krabbe Disease
+ Question: Which enzyme is deficient in Krabbe disease?
+Ideal Answer: Galactocerebrosidase is an enzyme that is deficient in Krabbe disease (also known as globoid-cell leukodystrophy). This leads to accumulation of psychosine (galactosylsphingosine) primarily in oligodendrocytes.
+
+26. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is there any data to suggest that TRH (thyrotropin releasing hormone) administration can improve symptom severity of amyotrophic lateral sclerosis patients?
+Ideal Answer: Yes, there are studies demonstrating that TRH (thyrotropin releasing hormone) administration can improve symptom severity of amyotrophic lateral sclerosis patients. However, some studies have failed to demonstrate symptom improvement following TRH administration.
+
+27. Disease: Amyotrophic Lateral Sclerosis
+ Question: Are immune cells affected in Amyotrophic Lateral Sclerosis?
+Ideal Answer: In ALS T-cell deficiency increases neuronal loss, while boosting T cell levels reduces it.
+
+28. Disease: Prader-Willi Syndrome
+ Question: Which genetic defects are observed in Prader-Willi syndrome?
+Ideal Answer: The predominant genetic defects in Prader-Willi syndrome are 15q11-13 deletions of paternal origin and maternal chromosome 15 uniparental disomy, or rare imprinting mutations, combined with monoallelic expression of the paternal alleles.
+
+29. Disease: Ehlers-Danlos Syndrome
+ Question: Which genes are associated with Ehlers-Danlos syndrome type I/II?
+Ideal Answer: It is currently estimated that approximately 50% of patients with a clinical diagnosis of classic Ehlers-Danlos syndrome harbor mutations in the COL5A1 and the COL5A2 gene, encoding the α1 and the α2-chain of type V collagen, respectively
+
+30. Disease: Tuberous Sclerosis
+ Question: Is Tuberous Sclerosis a genetic disease?
+Ideal Answer: Tuberous sclerosis is a genetic disorder with an autosomal dominant pattern of inheritance, variable expressivity, and incomplete penetrance. Two thirds of TSC cases result from sporadic genetic mutations, not inheritance, but their offspring may inherit it from them. Current genetic tests have difficulty locating the mutation in approximately 20% of individuals diagnosed with the disease. So far it has been mapped to two genetic loci, TSC1 and TSC2.
+TSC1 encodes for the protein hamartin, is located on chromosome 9 q34 and was discovered in 1997. TSC2 encodes for the protein Tuberin, is located on chromosome 16 p13.3 and was discovered in 1993. TSC2 is contiguous with PKD1, the gene involved in one form of polycystic kidney disease (PKD). Gross deletions affecting both genes may account for the 2% of individuals with TSC who also develop PKD in childhood. TSC2 has been associated with a more severe form of TSC. However, the difference is subtle and cannot be used to identify the mutation clinically. Estimates of the proportion of TSC caused by TSC2 range from 55% to 80-90%.
+
+31. Disease: Marfan Syndrome
+ Question: Which are the musculoskeletal manifestations of Marfan syndrome?
+Ideal Answer: Musculoskeletal manifestations of Marfan syndrome include scoliosis, dural ectasia, pectus excavatum and carinatum, arachnodactyly, otto pelvis (protrusio acetabuli), dolichostenomelia and ligamentous laxity.
+
+32. Disease: Tay-Sachs Disease
+ Question: Which is the gene most commonly mutated in Tay-Sachs disease?
+Ideal Answer: HEXA gene, encoding the alpha-subunit of the lysosomal enzyme, beta-N-acetylhexosaminidase A
+
+33. Disease: Amyotrophic Lateral Sclerosis
+ Question: Which type of cells is affected in Amyotrophic Lateral Sclerosis?
+Ideal Answer: Amyotrophic lateral sclerosis (ALS) is a neurodegenerative disorder in which motor neurons are affected.
+
+34. Disease: Duchenne Muscular Dystrophy
+ Question: Does fibronectin constitute a serum biomarker for Duchenne muscular dystrophy?
+Ideal Answer: Compared to age-matched controls, fibronectin levels in DMD patients were found to be significantly increased, whereas in patients with Becker muscular dystrophy, Bethlem myopathy, or myasthenia gravis were close to the control levels. Additionally, progressive elevation in fibronectin levels was observed in longitudinal samples from DMD patients followed up for a period of 6 months up to 4 years. Therefore, fibronectin is a serum biomarker for Duchenne muscular dystrophy.
+
+35. Disease: Spinal Muscular Atrophy
+ Question: What is the molecular pathogenesis of Spinal Muscular Atrophy?
+Ideal Answer: Spinal muscular atrophy is an autosomal recessive neurodegenerative disease characterised by degeneration of spinal cord motor neurons, atrophy of skeletal muscles, and generalised weakness. It is caused by homozygous disruption of the survival motor neuron 1 (SMN1) gene by deletion, conversion, or mutation, resulting in downregulated biogenesis of uridine-rich small nuclear RNAs (U snRNAs), which are major components of the splicing machinery.
+
+36. Disease: Thalassemia
+ Question: What is the incidence of beta-thalassemia in Greek population?
+Ideal Answer: The incidence of beta-thalassemia trait is 8% in Greek population.
+
+37. Disease: Fabry Disease
+ Question: Is Migalastat used for treatment of Fabry Disease?
+Ideal Answer: Yes, Migalastat is approved for treatment of Fabry disease. Migalastat is an oral pharmacological chaperone developed as an alternative to intravenous enzyme replacement therapy (ERT), stabilises specific mutant (amenable) forms of α-Gal to facilitate normal lysosomal trafficking.
+
+38. Disease: Sickle Cell Anemia
+ Question: What gene is mutated in Sickle Cell Anemia?
+Ideal Answer: Sickle cell anemia (SCA) is an autosomal recessive disease caused by by the HBB:c.20A>T mutation that leads to hemoglobin S synthesis.
+
+39. Disease: Rett Syndrome
+ Question: Have the promoter regions of the genes implicated in Rett Syndrome been characterized with CAGE?
+Ideal Answer: Yes. Promoter regions of the genes implicated in Rett Syndrome have been characterized using CAGE.
+
+40. Disease: X-linked Adrenoleukodystrophy
+ Question: What is the incidence of new cases of X-linked adrenoleukodystrophy (ALD) in Australian and New Zealand in the late 1990's?
+Ideal Answer: cases of ALD diagnosed in Australia and New Zealand between 1981 and 1996 and their families. We estimate that the combined incidence of ALD and its variants in Australasia is at least 1.6 per 100,000. 
+
+41. Disease: Ehlers-Danlos Syndrome
+ Question: What tissue is most affected in Ehlers-Danlos syndromes?
+Ideal Answer: the ehlers-danlos syndromes (eds) are a group of connective tissue disorders characterized by triad of joint hypermobility, skin extensibility, and tissue fragility.
+
+42. Disease: Marfan Syndrome
+ Question: Which gene mutations cause the Marfan syndrome?
+Ideal Answer: Marfan syndrome (MFS) is an autosomal dominant disorder caused by mutations in the fibrillin 1 gene (FBN1).
+
+43. Disease: Thalassemia
+ Question: Is Beta-Thalassemia is associated with a mutation or deletion of the gene that codes for alpha globin?
+Ideal Answer: Beta-thalassemia, one of the most common single-gene disorders, is the result of reduced or absent production of β-globin chains
+
+44. Disease: Rett Syndrome
+ Question: Is there any involvement of L1 retrotransposition in the Rett syndrome?
+Ideal Answer: Yes. Recent studies indicate that long interspersed nuclear element-1 (L1) are mobilized in the genome of human neural progenitor cells and enhanced in Rett syndrome and ataxia telangiectasia.
+
+45. Disease: Marfan Syndrome
+ Question: Is Marfan syndrome associated with chordal rupture?
+Ideal Answer: Yes, chordal rupture was described in patients with Marfan syndrome.
+
+46. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is erythropoietin effective for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: No, erythropoietin is not effective for treatment of amyotrophic lateral sclerosis.
+
+47. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is celecoxib effective for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: No. In clinical trial celecoxib did not have a beneficial effect on research subjects with ALS, and it was safe. A biological effect of celecoxib was not demonstrated in the cerebrospinal fluid. Further studies of celecoxib at a dosage of 800 mg/day in ALS were not recommended.
+
+48. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is lithium effective for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: No, lithium is not effective for treatment of amyotrophic lateral sclerosis.
+
+49. Disease: Von Hippel-Lindau Disease
+ Question: Can pazopanib be used for treatment von Hippel-Lindau disease?
+Ideal Answer: Yes, pazopanib is used for treatment von Hippel-Lindau disease.
+
+50. Disease: Krabbe Disease
+ Question: What is the cause of Krabbe disease?
+Ideal Answer: Globoid cell leukodystrophy (GLD), or Krabbe disease, is an inherited, neurologic disorder that results from deficiency of a lysosomal enzyme, galactosylceramidase.
+
+51. Disease: Alport Syndrome
+ Question: What is the Triad of Alport Syndrome?
+Ideal Answer: Alport syndrome is a rare condition characterized by the clinical triad of nephritic syndrome, sensorineural deafness, and ophthalmological alterations.
+
+52. Disease: Amyotrophic Lateral Sclerosis
+ Question: Should Pentoxifylline be used for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: No. Pentoxifylline is not beneficial in amyotrophic lateral sclerosis and should be avoided in patients treated with riluzole.
+
+53. Disease: Amyotrophic Lateral Sclerosis
+ Question: Does clinical trial data support the use of minocycline for amyotrophic lateral sclerosis?
+Ideal Answer: No. Available clinical trial data suggest that minocycline does not improve prognosis and functional status, and has a harmful effect on patients with amyotrophic lateral sclerosis.
+
+54. Disease: Amyotrophic Lateral Sclerosis
+ Question: Does xaliproden improve prognosis of amyotrophic lateral sclerosis?
+Ideal Answer: No. There is not sufficient high quality evidence that xaliproden significantly improves prognosis of amyotrophic lateral sclerosis patients.
+
+55. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is celecoxib effective for amyotrophic lateral sclerosis?
+Ideal Answer: No. In a clinical trial, celecoxib did not have a beneficial effect on patients with amyotrophic lateral sclerosis.
+
+56. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is ozanezumab effective for amyotrophic lateral sclerosis?
+Ideal Answer: No. Ozanezumab did not show efficacy compared with placebo in patients with amyotrophic lateral sclerosis. Therefore, Nogo-A does not seem to be an effective therapeutic target in ALS.
+
+57. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is indinavir effective for treatment of amyotrophic lateral sclerosis?
+Ideal Answer: No, indinavir is not effective for treatment of amyotrophic lateral sclerosis.
+
+58. Disease: Amyotrophic Lateral Sclerosis
+ Question: What is the role of phenylbutyrate–taurursodiol for amyotrophic lateral sclerosis?
+Ideal Answer: Treatment of amyotrophic lateral sclerosis patients with phenylbutyrate–taurursodiol was associated with both functional and survival benefits.
+
+59. Disease: Amyotrophic Lateral Sclerosis
+ Question: Should perampanel be used for amyotrophic lateral sclerosis?
+Ideal Answer: No. Perampanel should not be used for amyotrophic lateral sclerosis.
+
+60. Disease: Duchenne Muscular Dystrophy
+ Question: Should edasalonexent be used for Duchenne muscular dystrophy patients?
+Ideal Answer: No. In phase 3 clinical trial edasalonexent did not achieve statistical significance for improvement in primary and secondary functional endpoints for assessment of Duchenne muscular dystrophy. However, subgroup analysis suggested that edasalonexent may slow disease progression if initiated before 6 years of age.
+
+61. Disease: Duchenne Muscular Dystrophy
+ Question: Which disease phenotype has the worst prognosis in Duchenne Muscular Dystrophy?
+Ideal Answer: A strong association between the risk of cognitive disability and the involvement of groups of DMD isoforms was found. In particular, improvements in the correlation of FSIQ with mutation location were identified when a new classification system for mutations affecting the Dp140 isoform was implemented.
+
+62. Disease: Duchenne Muscular Dystrophy
+ Question: Which models are used for predicting disease progression in Duchenne Muscular Dystrophy?
+Ideal Answer: Longitudinal changes in biomarkers were modeled with a cumulative distribution function using a nonlinear mixed-effects approach.
+
+63. Disease: Duchenne Muscular Dystrophy
+ Question: Which biomarkers are currently used for Duchenne Muscular Dystrophy?
+Ideal Answer: MRI measurements can be used as biomarkers of disease severity in ambulant patients with DMD. malate dehydrogenase 2 as candidate prognostic biomarker for Duchenne muscular dystrophy
+
+64. Disease: Duchenne Muscular Dystrophy
+ Question: What datasets are available related to Duchenne Muscular Dystrophy?
+Ideal Answer: Using data from the Muscular Dystrophy Surveillance, Tracking, and Research Network (MD STARnet) Five sources of RWD/NHD were contributed by Universitaire Ziekenhuizen Leuven, DMD Italian Group, The Cooperative International Neuromuscular Research Group, ImagingDMD, and the PRO-DMD-01 study (n = 430 patients, in total).
+
+65. Disease: Duchenne Muscular Dystrophy
+ Question: Which are the uses of deep learning models in Duchenne Muscular Dystrophy?
+Ideal Answer: Deep Learning of Ultrasound Imaging for Evaluating Ambulatory Function of Individuals with Duchenne Muscular Dystrophy.
+
+66. Disease: Duchenne Muscular Dystrophy
+ Question: Are functional tests a good biomarker for Duchenne Muscular Dystrophy?
+Ideal Answer: North Star Ambulatory Assessment is practical and reliable. allow assessment of high-functioning boys with Duchenne muscular dystrophy.
+
+67. Disease: Duchenne Muscular Dystrophy
+ Question: What are the most commonly used diagnostic tests for the diagnosis of Duchenne muscular dystrophy?
+Ideal Answer: The most commonly used diagnostic tests for the diagnosis of Duchenne muscular dystrophy include genetic testing, electromyography (EMG), muscle biopsy, and serum creatine kinase (CK) levels.
+
+68. Disease: Amyotrophic Lateral Sclerosis
+ Question: Can Amyotrophic Lateral Sclerosis (ALS) be associated with a mutation of the Super Oxide Dismutase 1 (SOD) gene?
+Ideal Answer: Yes, mutations of the Super Oxide Dismutase 1 (SOD1) gene have been linked to some cases of Amyotrophic Lateral Sclerosis (ALS).
+
+69. Disease: Duchenne Muscular Dystrophy
+ Question: What is the difference between Duchenne muscular Dystrophy and Becker muscular dystrophy?
+Ideal Answer: DMD patients do not produce dystrophin whereas BMD patients produce 10-40% of the normal amount of dystrophin.
+
+70. Disease: Duchenne Muscular Dystrophy
+ Question: What are the most common mutation locations in dystrophin gene in Duchenne muscular dystrophy?
+Ideal Answer: The most common mutation locations in dystrophin gene in Duchenne muscular dystrophy are the distal hotspot exons, specifically exons 47, 48, and 50. Additionally, mutations in the proximal portion of the gene not involving Dp140 have been found to be less severe. Duplications spanning one or more exons are also a common cause of the disease.
+
+71. Disease: Duchenne Muscular Dystrophy
+ Question: What are the most common neuropsychiatric disorders associated with Duchenne muscular dystrophy?
+Ideal Answer: The most common neuropsychiatric disorders associated with Duchenne muscular dystrophy are autism spectrum disorders (ASDs), epilepsy, attention-deficit hyperactivity disorder (ADHD), depression, anxiety disorders and obsessive-compulsive disorder (OCD).
+
+72. Disease: Duchenne Muscular Dystrophy
+ Question: What is the incidence of Duchenne Muscular Dystrophy?
+Ideal Answer: The incidence of Duchenne Muscular Dystrophy is approximately 1:5,000 live male births
+
+73. Disease: Hereditary Angioedema
+ Question: Which gene is most frequently mutated in hereditary angioedema ?
+Ideal Answer: Almost all cases of HAE are caused by mutations in the SERPING1 gene resulting in a deficiency in functional plasma C1 esterase inhibitor (C1EI), a serine protease inhibitor that normally inhibits proteases in the contact, complement, and fibrinolytic systems
+
+74. Disease: Duchenne Muscular Dystrophy
+ Question: What is usually the age of diagnosis in Duchenne muscular dystrophy?
+Ideal Answer: The usual age of diagnosis in Duchenne muscular dystrophy is around 4.9 years.
+
+75. Disease: Hereditary Angioedema
+ Question: What is hereditary angioedema?
+Ideal Answer: Hereditary angioedema (HAE) is a rare disease that causes episodic attacks of subcutaneous and submucosal edema, which can be painful, incapacitating, and potentially fatal. These attacks are mediated by excessive bradykinin production, as a result of uncontrolled activation of the plasma kallikrein/kinin system, which is caused by a C1 esterase inhibitor deficiency or dysfunction in HAE types 1 and 2, respectively.
+
+76. Disease: Hereditary Angioedema
+ Question: Which drug was the first recombinant human C1 inhibitor protein (C1INH) for the treatment of acute attacks of hereditary angioedema (HAE)?
+Ideal Answer: Conestat alfa (Ruconest, rhC1INH) is the first recombinant human C1 inhibitor protein (C1INH) for the treatment of acute attacks of hereditary angioedema (HAE).
+
+77. Disease: Duchenne Muscular Dystrophy
+ Question: At what range of ages usually occurs the loss of independent ambulation in Duchenne muscular dystrophy?
+Ideal Answer: The loss of independent ambulation in Duchenne muscular dystrophy typically occurs between the ages of 7 and 13 years.
+
+78. Disease: Duchenne Muscular Dystrophy
+ Question: What is the life expectancy for Duchenne muscular dystrophy patients?
+Ideal Answer: The life expectancy for Duchenne muscular dystrophy patients varies depending on the time period they were born in, but patients born after 1990 have a median life expectancy of 28.1 years.
+
+79. Disease: Hereditary Angioedema
+ Question: What is the inheritance pattern of hereditary angioedema?
+Ideal Answer: Hereditary angioedema (HAE) is an autosomal dominant disorder.
+
+80. Disease: Spinal Muscular Atrophy
+ Question: What is the cause of Spinal Muscular Atrophy (SMA)?
+Ideal Answer: Spinal muscular atrophy (SMA) is a neurodegenerative disease caused by mutations in the survival motor neuron 1 (SMN1) gene.
+
+81. Disease: Hemophilia
+ Question: Was AAVS3 developed for hemophilia A?
+Ideal Answer: No. AAVS3 was developed for hemophilia B.
+
+82. Disease: Leigh Syndrome
+ Question: What is the incidence of Leigh syndrome?
+Ideal Answer: The incidence of Leigh syndrome ranges from 1:40,000 to 1:77,000 liveborn infants annually.
+
+83. Disease: Spinal Muscular Atrophy
+ Question: What are the types of Spinal Muscular Atrophy?
+Ideal Answer: The types of Spinal Muscular Atrophy are: SMA type 1, SMA type 2, SMA type 3, SMA type 4, X-linked SMA and SMA with respiratory distress.
+
+84. Disease: Leigh Syndrome
+ Question: How is Leigh syndrome inherited?
+Ideal Answer: LS is a rare progressive multisystem fatal disorder inherited by autosomal recessive, X-linked and maternal transmission.
+
+85. Disease: Spinal Muscular Atrophy
+ Question: Are there any other types of Spinal Muscular Atrophy except for types 1-4?
+Ideal Answer: Yes, there is an exceptionally rare type of SMA called SMARD1.
+
+86. Disease: Spinal Muscular Atrophy
+ Question: What is Spinal Muscular Atrophy?
+Ideal Answer: Spinal muscular atrophy (SMA) is a rare autosomal recessive neuromuscular disease which is characterised by muscle atrophy and early death in most patients. It is an autosomal recessive neurodegenerative disorder of alpha motor neurons of spinal cord associated with progressive muscle weakness and hypotonia.
+
+87. Disease: Duchenne Muscular Dystrophy
+ Question: What are the most common mutation types in Duchenne muscular Dystrophy?
+Ideal Answer: The most common mutation types in Duchenne muscular dystrophy (DMD) are deletions, duplications, and point mutations in the dystrophin gene.
+
+88. Disease: Duchenne Muscular Dystrophy
+ Question: Is casimersen effective for the treatment of Duchenne muscular dystrophy?
+Ideal Answer: Yes, casimersen is effective for the treatment of Duchenne muscular dystrophy.
+
+89. Disease: Duchenne Muscular Dystrophy
+ Question: Is eteplirsen effective for the treatment of Duchenne muscular dystrophy?
+Ideal Answer: Yes, eteplirsen is effective for the treatment of Duchenne muscular dystrophy.
+
+90. Disease: Duchenne Muscular Dystrophy
+ Question: Which gene therapies are under investigation for Duchenne muscular dystrophy?
+Ideal Answer: Gene therapies under investigation for Duchenne muscular dystrophy include exon skipping, stop codon read-through, gene editing, and gene replacement.
+
+91. Disease: Duchenne Muscular Dystrophy
+ Question: Is North Star Ambulatory Assessment score a reliable clinical outcome for disease progression assessment in Duchenne Muscular Dystrophy?
+Ideal Answer: Yes, North Star Ambulatory Assessment score is a reliable clinical outcome and widely used for disease progression assessment in Duchenne Muscular Dystrophy.
+
+92. Disease: Duchenne Muscular Dystrophy
+ Question: Is golodirsen effective for the treatment of Duchenne muscular dystrophy?
+Ideal Answer: Yes, golodirsen can be considered effective for the treatment of Duchenne muscular dystrophy.
+
+93. Disease: Duchenne Muscular Dystrophy
+ Question: Is deflazacort more efficient than prednisone/prednisolone for the treatment of Duchenne muscular dystrophy?
+Ideal Answer: Both daily prednisone and daily deflazacort were more effective
+
+94. Disease: Duchenne Muscular Dystrophy
+ Question: Is viltolarsen effective for the treatment of Duchenne muscular dystrophy?
+Ideal Answer: Yes, viltolarsen is effective for the treatment of Duchenne muscular dystrophy.
+
+95. Disease: Amyotrophic Lateral Sclerosis
+ Question: Is levosimendan effective for amyotrophic lateral sclerosis?
+Ideal Answer: No. Levosimendan was not superior to placebo in maintaining respiratory function in a broad population with amyotrophic lateral sclerosis. Although levosimendan was generally well tolerated, increased heart rate and headache occurred more frequently with levosimendan than with placebo.
+
+96. Disease: Rett Syndrome
+ Question: What is the triad of the Eagle-Barrett Syndrome?
+Ideal Answer: Eagle-Barrett Syndrome (EBS) is a rare congenital condition characterized by the triad of absent or defective abdominal wall muscles, urinary tract abnormalities, and bilateral cryptorchidism.
+
+97. Disease: Duchenne Muscular Dystrophy
+ Question: What types of glucosteroids are used for the management of Duchenne muscular dystrophy?
+Ideal Answer: Prednisone and deflazacort are glucosteroids used for the management of Duchenne muscular dystrophy.
+
+98. Disease: Leigh Syndrome
+ Question: What is the cause of Leigh syndrome?
+Ideal Answer: Leigh syndrome may result from several defects of mitochondrial enzyme complexes, including pyruvate dehydrogenase complex, and respiratory chain complexes I, II, III, IV, V.
+
+99. Disease: Duchenne Muscular Dystrophy
+ Question: Is there an association between specific genotypes and the risk of ASD for Duchenne Muscular Dystrophy?
+Ideal Answer: No, there is no association between specific genotypes and the risk of ASD for Duchenne Muscular Dystrophy. Further research is needed regarding Dp140 and Dp71, especially in DMD for ASD.
+
+100. Disease: Duchenne Muscular Dystrophy
+ Question: What is PUL-2 in Duchenne Muscular Dystrophy?
+Ideal Answer: PUL 2.0 is the performance of upper limb 2.0 (PUL) and is widely used to assess upper limb function in DMD patients.
+
+101. Disease: Duchenne Muscular Dystrophy
+ Question: Are there any digital biomarkers for Duchenne Muscular Dystrophy?
+Ideal Answer: Yes, the KineDMD ethomic biomarker is a digital biomarker for Duchenne Muscular Dystrophy.
+
+102. Disease: Duchenne Muscular Dystrophy
+ Question: Is there an association between specific genotypes and the risk of ADHD for Duchenne Muscular Dystrophy?
+Ideal Answer: Yes, there is an association between specific genotypes and the risk of ADHD for Duchenne Muscular Dystrophy, with mutations predicted to affect dystrophin isoforms expressed in the brain being linked to a higher risk of ADHD.
+
+103. Disease: Duchenne Muscular Dystrophy
+ Question: Are there any episignatures for Duchenne Muscular Dystrophy?
+Ideal Answer: Yes, there is a DNA methylation episignature for Duchenne muscular dystrophy
+
+104. Disease: Duchenne Muscular Dystrophy
+ Question: What are the most common issues that need to be addressed in adults with Duchenne Muscular Dystrophy?
+Ideal Answer: Adults living with DMD need to address the following health-related issues: management of emergencies and safety of pharmacological treatments for psychiatric symptoms, chronic pain management, as well as an increasing caregivers burden.
+
+105. Disease: Duchenne Muscular Dystrophy
+ Question: What is the prevalence of intellectual developmental disorders in Duchenne Muscular Dystrophy?
+Ideal Answer: The prevalence of intellectual developmental disorders in Duchenne Muscular Dystrophy (DMD) is approximately 22%.
+
+106. Disease: Friedreich Ataxia
+ Question: Is Omaveloxolone effective for Friedreich Ataxia?
+Ideal Answer: Yes. Omaveloxolone is effective and approved for Friedreich Ataxia.
+
+107. Disease: Phenylketonuria
+ Question: What is the cause of Phenylketonuria (PKU)?
+Ideal Answer: Phenylketonuria (PKU) is an inborn error caused by deficiencies in phenylalanine (Phe) metabolism.
+
+108. Disease: Ehlers-Danlos Syndrome
+ Question: How is pain treated in patients with Ehlers-Danlos Syndrome?
+Ideal Answer: Pain in patients with Ehlers-Danlos Syndrome is treated using a multidisciplinary approach that includes physical therapy, psychotherapy, pharmacotherapy, and interventional pain procedures such as trigger point injections, peripheral nerve block, radiofrequency ablation, and peripheral nerve stimulation.
+
+109. Disease: Ehlers-Danlos Syndrome
+ Question: What are the types of Ehlers-Danlos Syndrome?
+Ideal Answer: Ehlers-Danlos Syndrome (EDS) is a group of 13 distinct subtypes, each characterized by unique clinical features and inheritance patterns. These subtypes include: , 1. Classical EDS, marked by skin hyperextensibility, joint hypermobility, and tissue fragility., 2. Classical-like EDS, with less severe skin involvement than classical EDS., 3. Cardiac-valvular EDS, featuring cardiac valve abnormalities without aortic root enlargement., 4. Vascular EDS, characterized by arterial, intestinal, and uterine fragility, leading to rupture., 5. Hypermobile EDS, the most common type, with joint hypermobility and related symptoms., 6. Arthrochalasia EDS, displaying severe generalized joint hypermobility and congenital hip dislocation., 7. Dermatosparaxis EDS
+
+110. Disease: Cystic Fibrosis
+ Question: What are the new treatments for cystic fibrosis?
+Ideal Answer: Several new treatments for cystic fibrosis (CF) have been approved or are in development. Here are some notable ones:
+- Trikafta (elexacaftor/tezacaftor/ivacaftor): A combination therapy that improves lung function and reduces symptoms in people with the F508del mutation.
+- Orkambi (lumacaftor/ivacaftor): A combination therapy approved for use in people with the F508del mutation.
+- Kalydeco (ivacaftor): A medication approved for use in people with the G551D mutation.
+- Symdeko (tezacaftor/ivacaftor): A combination therapy approved for use in people with the F508del mutation.
+- Gene therapy: Researchers are working on gene therapies to correct the defective CFTR gene that causes CF.
+- RNA-based therapies: These therapies target the defective CFTR gene to restore its function.
+- CRISPR-Cas9 gene editing: This technology aims to correct the defective CFTR gene.
+- Stem cell therapies: The use of stem cells is being explored to repair or replace damaged lung tissue in people with CF.
+- Lung transplantation: This is an option for people with severe CF who have end-stage lung disease.
+
+It's important to note that these treatments are not cures for CF but can help manage symptoms and slow the disease's progression.
+
+111. Disease: Ehlers-Danlos Syndrome
+ Question: What diseases are included in the differential diagnosis of Ehlers-Danlos Syndrome?
+Ideal Answer: The differential diagnosis of Ehlers-Danlos Syndrome includes hypermobility spectrum disorders, Marfan syndrome, Loey-Dietz syndrome, Cutis laxa syndromes, autosomal dominant polycystic kidney disease, osteogenesis Imperfecta Type 1,cfibromyalgia, depression, and chronic fatigue syndrome.
+
+112. Disease: Ehlers-Danlos Syndrome
+ Question: Is there a specific cure for Ehlers-Danlos Syndrome?
+Ideal Answer: No. Currently, there is no specific cure for Ehlers-Danlos Syndrome. Management is focused on treating the various symptoms and complications that can arise from the condition.
+
+113. Disease: Prader-Willi Syndrome
+ Question: What is the cause of Prader-Willi Syndrome?
+Ideal Answer: Prader-Willi syndrome is a complex epigenetic disorder caused by the deficiency of paternally expressed genes in chromosome 15q11-q13.
+
+114. Disease: Phenylketonuria
+ Question: What are the current approaches for gene therapy for Phenylketonuria (PKU)?
+Ideal Answer: The current approaches for gene therapy for Phenylketonuria (PKU) include recombinant viral (AdV, AAV, and LV) and non-viral (naked DNA or LNP-mRNA) vector delivery methods, combined with gene addition, genome, gene or base editing, and gene insertion or replacement
+
+115. Disease: Rett Syndrome
+ Question: What is the cause of Rett Syndrome?
+Ideal Answer: Rett Syndrome is caused by mutations of the X-linked gene encoding methyl-CpG-binding protein 2 (MECP2), which is responsible for classical forms of the disease in girls.
+

@@ -18,6 +18,6 @@ class NVEmbedder:
 
     
     def embed_passage(self, passage):
-        passage_embeddings = self.model.encode(passage, instruction="", max_length=self.max_length)
+        passage_embeddings = self.model.encode([passage], instruction="", max_length=self.max_length)
         passage_embeddings = F.normalize(passage_embeddings, p=2, dim=1)
         return passage_embeddings

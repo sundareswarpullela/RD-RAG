@@ -4,15 +4,15 @@ from embedding.titan_embed import TitanEmbedder
 from embedding.openai_embed import OpenAIEmbedder
 from embedding.gte_large_embed import GTEEmbedder
 from embedding.bge_en_embed import BGEEmbedder
-from langchain_text_splitters import CharacterTextSplitter
-
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from tqdm import tqdm
 import json
 import argparse
 import logging
 from PyPDF2 import PdfReader
 from chromadb import Documents, EmbeddingFunction, Embeddings, PersistentClient
 
-CHUNK_SIZE = 250
+CHARACTERS_SIZE = 2048
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -41,7 +41,7 @@ class Embedder(EmbeddingFunction):
         
     def __call__(self, input: Documents) -> Embeddings:
 
-        return  self.embedder.embed_passage(input)
+        return  self.embedder.embed_passages(input)
 
 
     def embed_query(self, text):
@@ -57,52 +57,66 @@ class Embedder(EmbeddingFunction):
 
 
     def chunk_text(self, text):
-        text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
-    encoding_name="cl100k_base", chunk_size=CHUNK_SIZE, chunk_overlap=0)
+        text_splitter = RecursiveCharacterTextSplitter(
+            # Set a really small chunk size, just to show.
+            chunk_size=CHARACTERS_SIZE,
+            chunk_overlap=20,
+            length_function=len,
+            is_separator_regex=False,
+        )
         chunks = []
-        for chunk in text_splitter.split(text):
+        for chunk in text_splitter.create_documents(text):
             chunks.append(chunk)
         
         return chunks
 
-    def embed_bioasq(self, data_path):
-        with open(data_path, "r") as f:
-            data = json.load(f)
-
-        chroma_client = PersistentClient(path ="vectordb")
-
-        collection = chroma_client.create_collection(
-            name=f"bioasq_{self.embedder_name}",
-            embedding_function=self,
-            metadata={
-                "hnsw:space": "cosine",
-                "description": f"BioASQ data embedded using {self.embedder}",
-                }
-            )
-        
-        print("Created ChromaDB collection:", collection.name)
-        
-        id = 0
+    def split_bioasq_article(self, data):
+        split_articles = []
         for doc in data:
-            for article in doc["articles"]:
-                if len(article) >= CHUNK_SIZE:
-                    chunked_article = self.chunk_text(article)
+                for article in doc["articles"]:
+                    if article:
+                        if len(article) >= CHARACTERS_SIZE:
+                            chunked_article = self.chunk_text(article)
+                            split_articles.extend(chunked_article)
+                        else:
+                            split_articles.append(split_articles)
+        return split_articles
+            
 
-                    collection.add(
-                        documents=chunked_article,
-                        ids=[f"{id + i}" for i in range(len(chunked_article))],
-                        metadata={"sources": doc["sources"]}
-                    )
-                    
-                    id += len(chunked_article)
-
-                else:
-                    collection.add(
-                        documents=[article],
-                            ids=[f"{id}"],
-                            metadata={"sources": doc["sources"]}    
-                        )
-                    id += 1
-                print(f"Embedded {id} documents using {self.embedder} and saved to ChromaDB collection {collection.name}")
         
-        print(f"Embedded {id} documents using {self.embedder} and saved to ChromaDB collection {collection.name}")
+def embed_bioasq(embedder, data_path):
+    with open(data_path, "r") as f:
+        data = json.load(f)
+
+    chroma_client = PersistentClient(path ="vectordb")
+
+    collection = chroma_client.get_or_create_collection(
+        name=f"bioasq_{embedder.embedder_name}",
+        embedding_function=embedder,
+        metadata={
+            "hnsw:space": "cosine",
+            "description": f"BioASQ data embedded using {embedder.embedder_name}",
+            }
+        )
+   
+    print("Created ChromaDB collection:", collection.name)
+    
+    id_idx = 0
+    split_articles = embedder.split_bioasq_article(data["data"])
+    print("Articles split")
+    batch_size=10000
+    for i in tqdm(range(0, len(split_articles), batch_size), desc="Adding to ChromaDB"):
+        batch = split_articles[i:i+batch_size]
+        ids = ["id_" + str(id_idx + i) for i in range(0, batch_size)]
+    
+
+        # Add to ChromaDB
+        collection.add(ids=ids, documents=batch)
+        collection.add(
+            documents= batch,
+            ids=ids,
+            
+        )
+        id_idx += batch_size
+                  
+    print(f"Embedded documents using {embedder.embedder_name} and saved to ChromaDB collection {collection.name}")

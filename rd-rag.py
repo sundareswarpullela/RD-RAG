@@ -32,7 +32,7 @@ if __name__ == "__main__":
         else:
             log.info(f"Embedding model: {args.model}")
             embedder = Embedder(args.model)
-            embed_bioasq(data_path)
+            embed_bioasq(embedder, data_path)
 
 
     elif args.command == "rundb":

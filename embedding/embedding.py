@@ -67,7 +67,6 @@ class Embedder(EmbeddingFunction):
         )
         chunks = []
         for chunk in text_splitter.split_text(text):
-            print(chunk)
             chunks.append(chunk)
         return chunks
 
@@ -102,7 +101,7 @@ def embed_bioasq(embedder, data_path):
 
     print(f"Successfully split articles into splits of {CHARACTERS_SIZE} characters. Total splits: {len(split_articles)}")
 
-    batch_size=2
+    batch_size=100
 
     chroma_client = PersistentClient(path ="vectordb")
 
@@ -123,7 +122,6 @@ def embed_bioasq(embedder, data_path):
         time.sleep(1)
         batch = split_articles[i:i+batch_size]
         ids = ["id_" + str(id_idx + i) for i in range(0, len(batch))]
-        # print(ids)
         id_idx += batch_size
         
 

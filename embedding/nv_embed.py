@@ -17,7 +17,7 @@ class NVEmbedder:
         return query_embeddings
 
     
-    def embed_passage(self, passage):
-        passage_embeddings = self.model.encode([passage], instruction="", max_length=self.max_length)
-        passage_embeddings = F.normalize(passage_embeddings, p=2, dim=1)
-        return passage_embeddings
+    def embed(self, texts):    
+        embeddings = self.model.encode([texts], instruction="", max_length=self.max_length)
+        embeddings = F.normalize(embeddings, p=2, dim=1)
+        return embeddings

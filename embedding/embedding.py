@@ -14,7 +14,7 @@ import logging
 from PyPDF2 import PdfReader
 from chromadb import Documents, EmbeddingFunction, Embeddings, PersistentClient
 import time
-CHARACTERS_SIZE = 512
+CHARACTERS_SIZE = 2048
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)

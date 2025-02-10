@@ -11,29 +11,39 @@ class CohereEmbedder:
         self.contentType = 'application/json'
         self.accept = 'application/json'
         self.max_length = 512
-    def embed(self, text):
+
+    def embed(self, texts):
+        # print(texts)
+        print(len(texts))
+
+
         body = json.dumps(
-            {"texts":[text],
+            {"texts":texts,
              "input_type":"search_document"
             }
         )
+        try:
+            response = self.client.invoke_model(body=body, 
+                                                modelId=self.modelId, 
+                                                accept=self.accept, 
+                                                contentType=self.contentType
+                                                )
+            return json.loads(response['body'].read())["embeddings"]
+        except Exception as e:
+            print("ERROR: ", e)
+
         
-        response = self.client.invoke_model(body=body, modelId=self.modelId, accept=self.accept, contentType=self.contentType)
-        
-        return json.loads(response['body'].read())
     
     def embed_query(self, query):
         instruction = ""
         return self.embed(instruction + query)
     
     def embed_passages(self, texts):
-        embeddings = []
-        for text in texts:
-             embeddings.append(self.embed(text)["embeddings"])
-        return embeddings
+        print(len(texts))
+        # return self.embed(texts)
 
 
 
 # embb = CohereEmbedder()
-# print(embb.embed(["abc" for x in range(10)]))
+# print(embb.embed_passage(["abc" for _ in range(10)]))
     

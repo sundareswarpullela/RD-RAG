@@ -1,3 +1,5 @@
+from importlib import metadata
+from os import sep
 from embedding.cohere_embed import CohereEmbedder
 from embedding.nv_embed import NVEmbedder
 from embedding.titan_embed import TitanEmbedder
@@ -11,8 +13,8 @@ import argparse
 import logging
 from PyPDF2 import PdfReader
 from chromadb import Documents, EmbeddingFunction, Embeddings, PersistentClient
-
-CHARACTERS_SIZE = 2048
+import time
+CHARACTERS_SIZE = 512
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
@@ -41,45 +43,46 @@ class Embedder(EmbeddingFunction):
         
     def __call__(self, input: Documents) -> Embeddings:
 
-        return  self.embedder.embed_passages(input)
+        return  self.embed_passages(input)
 
 
     def embed_query(self, text):
         return self.embedder.embed_query(text)
     
-    def embed_passage(self, text):
-        chunks = self.chunk_text(text)
-        embeddings = []
-        for chunk in chunks:
-            embeddings.append(self.embedder.embed_passage(chunk))
-        return embeddings
+    def embed_passages(self, texts):
+        return self.embedder.embed(texts)
+        
+
     
 
 
     def chunk_text(self, text):
+        # print(text)
         text_splitter = RecursiveCharacterTextSplitter(
-            # Set a really small chunk size, just to show.
             chunk_size=CHARACTERS_SIZE,
             chunk_overlap=20,
             length_function=len,
             is_separator_regex=False,
+
         )
         chunks = []
-        for chunk in text_splitter.create_documents(text):
+        for chunk in text_splitter.split_text(text):
+            print(chunk)
             chunks.append(chunk)
-        
         return chunks
 
     def split_bioasq_article(self, data):
+
         split_articles = []
         for doc in data:
                 for article in doc["articles"]:
-                    if article:
-                        if len(article["article"]) >= CHARACTERS_SIZE:
-                            chunked_article = self.chunk_text(article["article"])
-                            split_articles.extend(chunked_article)
-                        else:
-                            split_articles.append(article["article"])
+                    if len(article["article"]) >= CHARACTERS_SIZE:
+                        chunked_article = self.chunk_text(article["article"])
+                        chunked_article = [{"pmid": article["PMID"], "article": chunk} for chunk in chunked_article]
+                        split_articles.extend(chunked_article)
+                    else:
+                        split_articles.append({"pmid": article["PMID"], "article": article["article"]})
+
         return split_articles
             
 
@@ -87,6 +90,19 @@ class Embedder(EmbeddingFunction):
 def embed_bioasq(embedder, data_path):
     with open(data_path, "r") as f:
         data = json.load(f)
+
+
+    
+
+    split_articles = embedder.split_bioasq_article(data["data"])
+    
+
+    with open(f"split_articles_{embedder.embedder_name}.json", "w") as f:
+        json.dump(split_articles, f)
+
+    print(f"Successfully split articles into splits of {CHARACTERS_SIZE} characters. Total splits: {len(split_articles)}")
+
+    batch_size=10
 
     chroma_client = PersistentClient(path ="vectordb")
 
@@ -100,23 +116,23 @@ def embed_bioasq(embedder, data_path):
         )
    
     print("Created ChromaDB collection:", collection.name)
-    
+
     id_idx = 0
-    split_articles = embedder.split_bioasq_article(data["data"])
-    print("Articles split")
-    batch_size=10000
+
     for i in tqdm(range(0, len(split_articles), batch_size), desc="Adding to ChromaDB"):
+        time.sleep(1)
         batch = split_articles[i:i+batch_size]
-        ids = ["id_" + str(id_idx + i) for i in range(0, batch_size)]
-    
+        ids = ["id_" + str(id_idx + i) for i in range(0, len(batch))]
+        # print(ids)
+        id_idx += batch_size
+        
+
 
         # Add to ChromaDB
-        collection.add(ids=ids, documents=batch)
         collection.add(
-            documents= batch,
+            documents= [doc["article"] for doc in batch],
             ids=ids,
-            
+            metadatas=[{"pmid": doc["pmid"]} for doc in batch]
         )
-        id_idx += batch_size
                   
     print(f"Embedded documents using {embedder.embedder_name} and saved to ChromaDB collection {collection.name}")

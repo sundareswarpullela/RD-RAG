@@ -102,7 +102,7 @@ def embed_bioasq(embedder, data_path):
 
     print(f"Successfully split articles into splits of {CHARACTERS_SIZE} characters. Total splits: {len(split_articles)}")
 
-    batch_size=10
+    batch_size=2
 
     chroma_client = PersistentClient(path ="vectordb")
 

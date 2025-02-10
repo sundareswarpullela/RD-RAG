@@ -18,6 +18,6 @@ class NVEmbedder:
 
     
     def embed(self, texts):    
-        embeddings = self.model.encode([texts], instruction="", max_length=self.max_length)
+        embeddings = self.model.encode(texts, instruction="", max_length=self.max_length)
         embeddings = F.normalize(embeddings, p=2, dim=1)
         return embeddings

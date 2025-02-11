@@ -19,13 +19,15 @@ if __name__ == "__main__":
     embed_parser.add_argument("model", type=str, help="Embedder model")
 
     db_parser = subparser.add_parser("rundb", help="Command to run vector db")
-    db_parser.add_argument("model", type=str, help="Vector DB to host for embedder model")
-    db_parser.add_argument("port", type=int, help="Port to host vector DB")
+    # db_parser.add_argument("port", type=int, help="Port to host vector DB")
+
+    generate_parser = subparser.add_parser("generate", help="Command to generate results")
+    generate_parser.add_argument("model", type=str, help="Embedder model")
 
     data_path =  "data-curation/data/source_files/filtered_rare_disease_data.json"
     vector_db_path = "vectordb"
     args = parser.parse_args()
-    print(args.model)
+    # print(args.model)
 
     if args.command == "embed":
         if args.model not in Embedder.embedder_map:
@@ -37,12 +39,13 @@ if __name__ == "__main__":
 
 
     elif args.command == "rundb":
-        log.info(f"Vector DB model: {args.model}")
-        log.info(f"Port: {args.port}")
-        subprocess.run(f"chroma run --path {vector_db_path}")
+        # log.info(f"Vector DB model: {args.model}")
+        # log.info(f"Port: {args.port}")
+        subprocess.run(["chroma", "run", "--path", f"{vector_db_path}"])
 
+    elif args.command == "generate":
+        pass
 
-    
+    else:
+        raise ValueError(f"Invalid command {args.command}")
 
-        
-            

@@ -101,7 +101,7 @@ def embed_bioasq(embedder, data_path):
 
     print(f"Successfully split articles into splits of {CHARACTERS_SIZE} characters. Total splits: {len(split_articles)}")
 
-    batch_size=100
+    batch_size=20
 
     chroma_client = PersistentClient(path ="vectordb")
 
@@ -119,7 +119,7 @@ def embed_bioasq(embedder, data_path):
     id_idx = 0
 
     for i in tqdm(range(0, len(split_articles), batch_size), desc="Adding to ChromaDB"):
-        time.sleep(1)
+        # time.sleep(1)
         batch = split_articles[i:i+batch_size]
         ids = ["id_" + str(id_idx + i) for i in range(0, len(batch))]
         id_idx += batch_size

@@ -1,26 +1,19 @@
-# Requires transformers>=4.36.0
-import torch
-import torch.nn.functional as F
-from transformers import AutoModel, AutoTokenizer
+from sentence_transformers import SentenceTransformer
+
 
 
 class GTEEmbedder:
     def __init__(self, model_path ="Alibaba-NLP/gte-large-en-v1.5"):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-        self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
+        self.model = SentenceTransformer('Alibaba-NLP/gte-large-en-v1.5', trust_remote_code=True)
         self.max_length = 8192
 
-    def __embed_text__(self, text):
-        encoded_input = self.tokenizer([text], max_length=8192, padding=True, truncation=True, return_tensors='pt')
-        model_output = self.model(**encoded_input)
-        embeddings = model_output.last_hidden_state[:, 0]
-        # normalize embeddings
-        embeddings = F.normalize(embeddings, p=2, dim=1)
+    def __embed_text__(self, texts):
+        embeddings = self.model.encode(texts)
         return embeddings
     
     def embed_query(self, query):
         instruction = ""
         return self.__embed_text__(instruction + query)
     
-    def embed_passage(self, passage):
-        return self.__embed_text__(passage)
+    def embed(self, texts):
+        return self.__embed_text__(texts)

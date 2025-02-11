@@ -16,5 +16,8 @@ class OpenAIEmbedder:
     def embed_query(self, query):
         return self.__embed_text__(query)   
     
-    def embed_passage(self, passage):   
-        return self.__embed_text__(passage)
+    def embed(self, texts):
+        embeddings = []
+        for text in texts:
+            embeddings.append(self.__embed_text__(text))
+        return embeddings

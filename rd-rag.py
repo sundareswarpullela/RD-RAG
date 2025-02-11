@@ -1,8 +1,9 @@
-
+import subprocess
 import argparse
 import logging
-from embedding.embedding import Embedder, embed_bioasq
 
+
+from embedding.embedding import Embedder, embed_bioasq
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
@@ -22,7 +23,7 @@ if __name__ == "__main__":
     db_parser.add_argument("port", type=int, help="Port to host vector DB")
 
     data_path =  "data-curation/data/source_files/filtered_rare_disease_data.json"
-
+    vector_db_path = "vectordb"
     args = parser.parse_args()
     print(args.model)
 
@@ -38,6 +39,9 @@ if __name__ == "__main__":
     elif args.command == "rundb":
         log.info(f"Vector DB model: {args.model}")
         log.info(f"Port: {args.port}")
+        
+
+    
 
         
             

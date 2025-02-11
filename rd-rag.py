@@ -39,7 +39,8 @@ if __name__ == "__main__":
     elif args.command == "rundb":
         log.info(f"Vector DB model: {args.model}")
         log.info(f"Port: {args.port}")
-        
+        subprocess.run(f"chroma run --path {vector_db_path}")
+
 
     
 

@@ -1,5 +1,3 @@
-from importlib import metadata
-from os import sep
 from embedding.cohere_embed import CohereEmbedder
 from embedding.nv_embed import NVEmbedder
 from embedding.titan_embed import TitanEmbedder
@@ -9,18 +7,16 @@ from embedding.bge_en_embed import BGEEmbedder
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from tqdm import tqdm
 import json
-import argparse
 import logging
-from PyPDF2 import PdfReader
 from chromadb import Documents, EmbeddingFunction, Embeddings, PersistentClient
 import time
+
 CHARACTERS_SIZE = 2048
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 
-joson_file_path = "embedding/embedder.json"
 pdfs_path = "data_curation/data/files"
 
 embedder_map = {
@@ -43,13 +39,13 @@ class Embedder(EmbeddingFunction):
         
     def __call__(self, input: Documents) -> Embeddings:
 
-        return  self.embed_passages(input)
+        return  self.embed(input)
 
 
     def embed_query(self, text):
         return self.embedder.embed_query(text)
     
-    def embed_passages(self, texts):
+    def embed(self, texts):
         return self.embedder.embed(texts)
         
 
@@ -119,7 +115,6 @@ def embed_bioasq(embedder, data_path):
     id_idx = 0
 
     for i in tqdm(range(0, len(split_articles), batch_size), desc="Adding to ChromaDB"):
-        # time.sleep(1)
         batch = split_articles[i:i+batch_size]
         ids = ["id_" + str(id_idx + i) for i in range(0, len(batch))]
         id_idx += batch_size

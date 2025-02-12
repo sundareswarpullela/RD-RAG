@@ -17,7 +17,6 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 
-pdfs_path = "data_curation/data/files"
 
 embedder_map = {
     "cohere": CohereEmbedder,

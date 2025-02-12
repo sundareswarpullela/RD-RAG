@@ -57,8 +57,19 @@ def rag_pipeline(queries, ground_truths, embedder, collection):
 
     return {"results": results}
 
+def load_data(data_path):
+    """
+    Load data from the given JSON file.
+    """
+    with open(data_path, "r") as f:
+        data = json.load(f)
+    queries = [item["question"] for item in data]
+    ground_truths = [item["answer"] for item in data]
 
-def generate_responses(queries, ground_truths, emb_model):
+    return queries, ground_truths
+
+
+def generate_responses(emb_model, data_path):
     """
     Generate responses for the given queries and ground truth answers.
     """
@@ -67,19 +78,14 @@ def generate_responses(queries, ground_truths, emb_model):
     chroma_client = chromadb.PersistentClient(path="vectordb")
     collection = chroma_client.get_collection(f"bioasq_{emb_model}")
     embedder = Embedder(emb_model)
+    queries, ground_truths = load_data(data_path)
 
     rag_results = rag_pipeline(queries, ground_truths, embedder, collection)
 
     # Save to JSON
-    with open("rag_results.json", "w") as f:
+    with open(f"rag_results_{emb_model.name}.json", "w") as f:
         json.dump(rag_results, f, indent=4)
 
-    print("RAG process completed. Results saved in 'rag_results.json'.")
+    print(f"RAG process completed. Results saved in 'rag_results_{emb_model.name}.json'.")
 
 
-
-generate_responses(
-    ["What is x linked dominant?"], 
-    ["X-linked dominant inheritance is a mode of genetic inheritance \
-     by which a dominant gene is carried on the X chromosome."], 
-    "nv")

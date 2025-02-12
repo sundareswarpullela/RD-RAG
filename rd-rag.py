@@ -4,6 +4,8 @@ import logging
 
 
 from embedding.embedding import Embedder, embed_bioasq
+from generate_responses import generate_responses
+
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 logging.basicConfig(format="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
@@ -27,7 +29,6 @@ if __name__ == "__main__":
     data_path =  "data-curation/data/source_files/filtered_rare_disease_data.json"
     vector_db_path = "vectordb"
     args = parser.parse_args()
-    # print(args.model)
 
     if args.command == "embed":
         if args.model not in Embedder.embedder_map:
@@ -44,7 +45,15 @@ if __name__ == "__main__":
         subprocess.run(["chroma", "run", "--path", f"{vector_db_path}"])
 
     elif args.command == "generate":
-        pass
+        if args.model not in Embedder.embedder_map:
+            raise ValueError(f"Invalid model name {args.model}")
+        else:
+            log.info(f"Embedding model: {args.model}")
+            embedder = Embedder(args.model)
+
+            generate_responses(embedder, data_path)
+        
+
 
     else:
         raise ValueError(f"Invalid command {args.command}")

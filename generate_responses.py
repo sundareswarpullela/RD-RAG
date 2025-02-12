@@ -3,17 +3,17 @@ import boto3
 import json
 import uuid
 from embedding.embedding import Embedder
-
+import os
 
 
 # Initialize AWS Bedrock client
 bedrock_client = boto3.client(service_name="bedrock-runtime", region_name="us-west-2")
 
-def retrieve_context(query, collection, embedder, top_k=5):
+def retrieve_context(query, embedder, collection, top_k=5):
     """
     Retrieve relevant context from ChromaDB for the given query.
     """
-    results = collection.query(query_embeddings=[embedder.embed([query])], n_results=top_k)
+    results = collection.query(query_embeddings=embedder.embed([query]), n_results=top_k)
 
     retrieved_contexts = []
     for doc_id, text in zip(results["ids"][0], results["documents"][0]):
@@ -29,7 +29,7 @@ def generate_response(query, retrieved_context):
     prompt = f"Context:\n{context_text}\n\nQuestion: {query}\n\nAnswer:"
 
     response = bedrock_client.invoke_model(
-        modelId="meta.llama3-3-70b-instruct-v1:0",
+        modelId="meta.llama3-1-70b-instruct-v1:0",
         body=json.dumps({"prompt": prompt, "max_tokens": 512})
     )
 

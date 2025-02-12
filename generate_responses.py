@@ -30,11 +30,11 @@ def generate_response(query, retrieved_context):
 
     response = bedrock_client.invoke_model(
         modelId="meta.llama3-1-70b-instruct-v1:0",
-        body=json.dumps({"prompt": prompt, "max_tokens": 512})
+        body=json.dumps({"prompt": prompt, "max_gen_len": 512})
     )
 
     response_body = json.loads(response["body"].read())
-    return response_body.get("outputText", "").strip()
+    return response_body.get("generation", "").strip()
 
 def rag_pipeline(queries, ground_truths, embedder, collection):
     """

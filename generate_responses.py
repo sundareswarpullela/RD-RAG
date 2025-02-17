@@ -36,7 +36,7 @@ def generate_response(query, retrieved_context):
         response_body = json.loads(response["body"].read())
         return response_body.get("generation", "").strip()
         
-    except e:
+    except Exception as e:
         print(f"Unable to generate response. {e}")
         
         return ""
@@ -70,7 +70,7 @@ def load_data(data_path):
     """
     with open(data_path, "r") as f:
         data = json.load(f)
-    queries = [item for item in data['data']]
+    queries = [item['question'] for item in data['data']]
     ground_truths = [item["answer"][0] for item in data['data']]
 
     return queries, ground_truths
@@ -85,15 +85,14 @@ def generate_responses(embedder, data_path):
     chroma_client = chromadb.PersistentClient(path="vectordb")
     collection = chroma_client.get_collection(f"bioasq_{embedder.embedder_name}")
     queries, ground_truths = load_data(data_path)
-    print(queries)
-    print(ground_truths)
 
-    # rag_results = rag_pipeline(queries, ground_truths, embedder, collection)
 
-    # # Save to JSON
-    # with open(f"rag_results_{embedder.embedder_name.json}", "w") as f:
-    #     json.dump(rag_results, f, indent=4)
+    rag_results = rag_pipeline(queries, ground_truths, embedder, collection)
 
-    # print(f"RAG process completed. Results saved in 'rag_results_{embedder.embedder_name.json}.json'.")
+    # Save to JSON
+    with open(f"rag_results_{embedder.embedder_name}.json", "w") as f:
+        json.dump(rag_results, f, indent=4)
+
+    print(f"RAG process completed. Results saved in 'rag_results_{embedder.embedder_name}.json'.")
 
 

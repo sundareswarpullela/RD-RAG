@@ -4,7 +4,7 @@ import json
 import uuid
 from embedding.embedding import Embedder
 import os
-
+from tqdm import tqdm
 
 # Initialize AWS Bedrock client
 bedrock_client = boto3.client(service_name="bedrock-runtime", region_name="us-west-2")
@@ -27,14 +27,20 @@ def generate_response(query, retrieved_context):
     """
     context_text = "\n".join([ctx["text"] for ctx in retrieved_context])
     prompt = f"Context:\n{context_text}\n\nQuestion: {query}\n\nAnswer:"
-
-    response = bedrock_client.invoke_model(
-        modelId="meta.llama3-1-70b-instruct-v1:0",
-        body=json.dumps({"prompt": prompt, "max_gen_len": 512})
-    )
-
-    response_body = json.loads(response["body"].read())
-    return response_body.get("generation", "").strip()
+    try: 
+        response = bedrock_client.invoke_model(
+            modelId="meta.llama3-1-70b-instruct-v1:0",
+            body=json.dumps({"prompt": prompt, "max_gen_len": 512})
+        )
+    
+        response_body = json.loads(response["body"].read())
+        return response_body.get("generation", "").strip()
+        
+    except e:
+        print(f"Unable to generate response. {e}")
+        
+        return ""
+    
 
 def rag_pipeline(queries, ground_truths, embedder, collection):
     """
@@ -42,7 +48,8 @@ def rag_pipeline(queries, ground_truths, embedder, collection):
     """
     results = []
 
-    for query, gt_answer in zip(queries, ground_truths):
+    for query, gt_answer in tqdm(zip(queries, ground_truths), total=len(queries), desc="Processing Queries"):
+
         query_id = str(uuid.uuid4())  # Generate unique query ID
         retrieved_context = retrieve_context(query, embedder, collection)
         response = generate_response(query, retrieved_context)
@@ -63,29 +70,30 @@ def load_data(data_path):
     """
     with open(data_path, "r") as f:
         data = json.load(f)
-    queries = [item["question"] for item in data]
-    ground_truths = [item["answer"] for item in data]
+    queries = [item for item in data['data']]
+    ground_truths = [item["answer"][0] for item in data['data']]
 
     return queries, ground_truths
 
 
-def generate_responses(emb_model, data_path):
+def generate_responses(embedder, data_path):
     """
     Generate responses for the given queries and ground truth answers.
     """
 
     # Initialize ChromaDB client and collection
     chroma_client = chromadb.PersistentClient(path="vectordb")
-    collection = chroma_client.get_collection(f"bioasq_{emb_model}")
-    embedder = Embedder(emb_model)
+    collection = chroma_client.get_collection(f"bioasq_{embedder.embedder_name}")
     queries, ground_truths = load_data(data_path)
+    print(queries)
+    print(ground_truths)
 
-    rag_results = rag_pipeline(queries, ground_truths, embedder, collection)
+    # rag_results = rag_pipeline(queries, ground_truths, embedder, collection)
 
-    # Save to JSON
-    with open(f"rag_results_{emb_model.name}.json", "w") as f:
-        json.dump(rag_results, f, indent=4)
+    # # Save to JSON
+    # with open(f"rag_results_{embedder.embedder_name.json}", "w") as f:
+    #     json.dump(rag_results, f, indent=4)
 
-    print(f"RAG process completed. Results saved in 'rag_results_{emb_model.name}.json'.")
+    # print(f"RAG process completed. Results saved in 'rag_results_{embedder.embedder_name.json}.json'.")
 
 

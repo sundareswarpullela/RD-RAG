@@ -50,9 +50,8 @@ if __name__ == "__main__":
         else:
             log.info(f"Embedding model: {args.model}")
             embedder = Embedder(args.model)
-
+            
             generate_responses(embedder, data_path)
-        
 
 
     else:

@@ -126,5 +126,5 @@ def embed_bioasq(embedder, data_path):
             ids=ids,
             metadatas=[{"pmid": doc["pmid"]} for doc in batch]
         )
-                  
+
     print(f"Embedded documents using {embedder.embedder_name} and saved to ChromaDB collection {collection.name}")

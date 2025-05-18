@@ -26,7 +26,7 @@ def generate_response(query, retrieved_context):
     Query Llama 3 on AWS Bedrock and generate a response.
     """
     context_text = "\n".join([ctx["text"] for ctx in retrieved_context])
-    prompt = f"You are an expert in answering Questions about Rare Diseases based on the given context. 
+    prompt = f"""You are an expert in answering Questions about Rare Diseases based on the given context. 
     Only use the given context to answer the questions.
     Here is an example: 
     Question: Which is the genetic defect causing Neurofibromatosis type 1?
@@ -40,7 +40,7 @@ def generate_response(query, retrieved_context):
     
     Question: {query}\n\n
     Context:\n{context_text}\n\n
-    Answer:"
+    Answer:"""
     try: 
         response = bedrock_client.invoke_model(
             modelId="meta.llama3-1-70b-instruct-v1:0",
